@@ -2,6 +2,8 @@
 * Hungarian, Polish, Korean translation
 * numerous fixes
 
+## 2.13.8 (September 9, 2023)
+* `tabbableDropdown`
 
 ## 2.13.8 (August 25, 2020)
 * `specialLabel`, `disableCountryGuess`
