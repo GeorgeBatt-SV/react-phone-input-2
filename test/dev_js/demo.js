@@ -62,6 +62,10 @@ class Demo extends React.Component {
             country='it'
             preferredCountries={['it', 'se']}
           />
+          <p>Disabled dropdown tab index</p>
+          <PhoneInput
+            tabbableDropdown={false}
+          />
         </div>
 
         <div style={{display: 'inline-block', marginLeft: '40px'}}>

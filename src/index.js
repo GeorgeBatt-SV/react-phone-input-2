@@ -912,7 +912,7 @@ class PhoneInput extends React.Component {
 
   render() {
     const { onlyCountries, selectedCountry, showDropdown, formattedNumber, hiddenAreaCodes } = this.state;
-    const { disableDropdown, renderStringAsFlag, isValid, defaultErrorMessage, specialLabel } = this.props;
+    const { disableDropdown, tabbableDropdown, renderStringAsFlag, isValid, defaultErrorMessage, specialLabel } = this.props;
 
     let isValidValue, errorMessage;
     if (typeof isValid === 'boolean') {
@@ -995,7 +995,7 @@ class PhoneInput extends React.Component {
             onClick={disableDropdown ? undefined : this.handleFlagDropdownClick}
             className={selectedFlagClasses}
             title={selectedCountry ? `${selectedCountry.localName || selectedCountry.name}: + ${selectedCountry.dialCode}` : ''}
-            tabIndex={disableDropdown ? '-1' : '0'}
+            tabIndex={disableDropdown || tabbableDropdown === false ? '-1' : '0'}
             role='button'
             aria-haspopup="listbox"
             aria-expanded={showDropdown ? true : undefined}

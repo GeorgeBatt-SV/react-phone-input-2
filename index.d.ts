@@ -75,6 +75,7 @@ declare module "@georgeyb-sv/react-phone-input-2" {
 
     disableCountryCode?: boolean;
     disableDropdown?: boolean;
+    tabbableDropdown?: boolean;
     enableLongNumbers?: boolean | number;
     countryCodeEditable?: boolean;
     enableSearch?: boolean;
