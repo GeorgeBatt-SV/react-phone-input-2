@@ -1,4 +1,4 @@
-declare module "@georgeyb-sv/react-phone-input-2" {
+declare module "@simpleview/react-phone-input-2" {
   import React from "react";
 
   export interface CountryData {
