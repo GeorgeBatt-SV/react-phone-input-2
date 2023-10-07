@@ -1,5 +1,5 @@
 {
-  "name": "@georgeyb-sv/react-phone-input-2",
+  "name": "@simpleview/react-phone-input-2",
   "version": "2.15.2",
   "description": "A react component to format phone numbers",
   "main": "lib/lib.js",
