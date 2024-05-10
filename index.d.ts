@@ -116,6 +116,6 @@ declare module "@simpleview/react-phone-input-2" {
     disableInitialCountryGuess?: boolean;
     disableCountryGuess?: boolean;
   }
-  const PhoneInput: React.FC<PhoneInputProps>;
+  const PhoneInput: React.FC<PhoneInputProps<any>>;
   export default PhoneInput;
 }
