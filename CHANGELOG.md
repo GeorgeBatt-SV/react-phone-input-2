@@ -1,3 +1,6 @@
+## 2.16.0 (May 10, 2024)
+* Adds support for a custom dropdown container component using the DropdownList prop, including a demonstration using material UI.
+
 ## 2.15.0 (February 3, 2022)
 * Hungarian, Polish, Korean translation
 * numerous fixes
