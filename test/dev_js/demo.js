@@ -2,7 +2,20 @@ import React from 'react';
 import { render } from 'react-dom';
 import PhoneInput from '../../src/index';
 import '../../src/style/style.less';
+import Popper from "@mui/material/Popper";
+import Paper from "@mui/material/Paper";
 
+const DropdownList = React.forwardRef(function DropdownList({ children, anchorEl }, ref) {
+  return (
+    <Popper open anchorEl={anchorEl} style={{ width: anchorEl.clientWidth }}>
+      <Paper>
+        <ul ref={ref} style={{ listStyle: "none", padding: 0 }}>
+          {children}
+        </ul>
+      </Paper>
+    </Popper>
+  );
+});
 
 class Demo extends React.Component {
   state = { country: 'br', value: '12345',
@@ -65,6 +78,10 @@ class Demo extends React.Component {
           <p>Disabled dropdown tab index</p>
           <PhoneInput
             tabbableDropdown={false}
+          />
+          <p>Custom dropdown list container</p>
+          <PhoneInput
+            DropdownList={DropdownList}
           />
         </div>
 
