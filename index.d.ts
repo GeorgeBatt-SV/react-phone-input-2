@@ -56,6 +56,14 @@ declare module "@simpleview/react-phone-input-2" {
     ): void;
   }
 
+  interface Components {
+    DropdownList: <T extends HTMLElement>(props: {
+      children: ReactNode;
+      ref: React.LegacyRef<T> | undefined;
+      anchorEl: HTMLElement;
+    }) => JSX.Element
+  }
+
   export interface PhoneInputProps extends PhoneInputEventsProps, Style {
     country?: string | number;
     value?: string | null;

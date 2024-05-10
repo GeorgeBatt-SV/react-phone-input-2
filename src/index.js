@@ -100,6 +100,7 @@ class PhoneInput extends React.Component {
     ]),
     defaultErrorMessage: PropTypes.string,
     specialLabel: PropTypes.string,
+    DropdownList: PropTypes.func,
   }
 
   static defaultProps = {
@@ -750,7 +751,7 @@ class PhoneInput extends React.Component {
   }
 
   handleClickOutside = (e) => {
-    if (this.dropdownRef && !this.dropdownContainerRef.contains(e.target)) {
+    if (this.dropdownRef && this.dropdownRef !== e.target && !this.dropdownRef.contains(e.target)) {
       this.state.showDropdown && this.setState({ showDropdown: false });
     }
   }
@@ -809,7 +810,7 @@ class PhoneInput extends React.Component {
   getCountryDropdownList = () => {
     const { preferredCountries, highlightCountryIndex, showDropdown, searchValue } = this.state;
     const { disableDropdown, prefix } = this.props
-    const { enableSearch, searchNotFound, disableSearchIcon, searchClass, searchStyle, searchPlaceholder, autocompleteSearch } = this.props;
+    const { enableSearch, searchNotFound, disableSearchIcon, searchClass, searchStyle, searchPlaceholder, autocompleteSearch, DropdownList } = this.props;
 
     const searchedCountries = this.getSearchFilteredCountries()
 
@@ -855,17 +856,8 @@ class PhoneInput extends React.Component {
       [this.props.dropdownClass]: true,
     });
 
-    return (
-      <ul
-        ref={el => {
-          !enableSearch && el && el.focus();
-          return (this.dropdownRef = el);
-        }}
-        className={dropDownClasses}
-        style={this.props.dropdownStyle}
-        role='listbox'
-        tabIndex='0'
-      >
+    const dropdownChildren = (
+      <>
         {enableSearch && (
           <li
             className={classNames({
@@ -906,6 +898,35 @@ class PhoneInput extends React.Component {
               <span>{searchNotFound}</span>
             </li>
           )}
+      </>
+    );
+
+    if (DropdownList) {
+      return (
+        <DropdownList
+          ref={el => {
+            !enableSearch && el && el.focus();
+            return (this.dropdownRef = el);
+          }}
+          anchorEl={this.numberInputRef}
+        >
+          {dropdownChildren}
+        </DropdownList>
+      );
+    }
+
+    return (
+      <ul
+        ref={el => {
+          !enableSearch && el && el.focus();
+          return (this.dropdownRef = el);
+        }}
+        className={dropDownClasses}
+        style={this.props.dropdownStyle}
+        role='listbox'
+        tabIndex='0'
+      >
+        {dropdownChildren}
       </ul>
     );
   }
