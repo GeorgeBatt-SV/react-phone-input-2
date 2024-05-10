@@ -56,15 +56,15 @@ declare module "@simpleview/react-phone-input-2" {
     ): void;
   }
 
-  interface Components<T> {
-    DropdownList?: <T extends HTMLElement>(props: {
+  interface Components<T extends HTMLElement> {
+    DropdownList?: (props: {
       children: React.ReactNode;
       ref: React.Ref<T> | undefined;
       anchorEl: HTMLElement;
     }) => JSX.Element
   }
 
-  export interface PhoneInputProps<T extends HTMLElement = HTMLElement> extends PhoneInputEventsProps, Style, Components<T> {
+  export interface PhoneInputProps<T extends HTMLElement> extends PhoneInputEventsProps, Style, Components<T> {
     country?: string | number;
     value?: string | null;
 
