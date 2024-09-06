@@ -61,7 +61,7 @@ declare module "@simpleview/react-phone-input-2" {
       children: React.ReactNode;
       ref: React.Ref<T> | undefined;
       anchorEl: HTMLElement;
-    }) => JSX.Element
+    }) => React.ReactNode
   }
 
   export interface PhoneInputProps<T extends HTMLElement> extends PhoneInputEventsProps, Style, Components<T> {
