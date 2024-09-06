@@ -1,3 +1,6 @@
+## 2.16.5 (May 10, 2024)
+* Fixes the return type of the dropdown component
+
 ## 2.16.4 (May 10, 2024)
 * Adds support for a custom dropdown container component using the DropdownList prop, including a demonstration using material UI.
 

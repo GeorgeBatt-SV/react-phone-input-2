@@ -1,6 +1,6 @@
 {
   "name": "@simpleview/react-phone-input-2",
-  "version": "2.16.4",
+  "version": "2.16.5",
   "description": "A react component to format phone numbers",
   "main": "lib/lib.js",
   "typings": "index.d.ts",
